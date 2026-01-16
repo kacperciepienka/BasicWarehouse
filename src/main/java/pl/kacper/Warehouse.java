@@ -31,7 +31,7 @@ public class Warehouse {
 
     public void updateQuantity(int id, int newQuantity) throws IncorrectValueException, ProductSoldOutException, ProductNotFoundException {
 
-        if (id < startId || id > currentId) {
+        if (!products.containsKey(id)) {
             throw new ProductNotFoundException("\nProdukt o podanym ID nie istnieje!\nSpróbuj ponownie!\n");
         }
 
